@@ -36,6 +36,7 @@ syn region reviewTable  start="^//table\[.*\]\[.*\]{" end="^//}"
 syn match reviewRef      "@<[a-z]\+>{.\{-\}\\\@<!}"
 
 syn match reviewComment "^#@#.*"
+syn region reviewCommentBlock start="^//comment{" end="^//}"
 syn match reviewWarn "^#@warn(.*)"
 syn match reviewRequire "^#@require\s"
 syn match reviewProvide "^#@provide\s"
@@ -70,6 +71,7 @@ HiLink reviewTable     NonText
 HiLink reviewRef       Label
 
 HiLink reviewComment   Comment
+HiLink reviewCommentBlock   Comment
 HiLink reviewWarn      WarningMsg
 HiLink reviewRequire   WarningMsg
 HiLink reviewProvide   WarningMsg
