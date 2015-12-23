@@ -21,7 +21,7 @@ syn match reviewNoindent  "//noindent"
 syn match reviewLinebreak "//linebreak"
 syn match reviewPagebreak "//pagebreak"
 
-syn match reviewUnorderedList "^\s\+\*\s\+.*"
+syn match reviewUnorderedList "^\s\+\*\+\s\+.*"
 syn match reviewOrderedList   "^\s\+[0-9]\+\.\s\+.*"
 syn match reviewDefinitions   "^\s\+\:\s\+.*"
 
