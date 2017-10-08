@@ -1,3 +1,10 @@
+if exists('g:loaded_review')
+  finish
+endif
+
+let s:save_cpo = &cpo
+set cpo&vim
+
 function! ReVIEWCaption(level)
   let level = a:level
   let orig = getline(".")
@@ -47,3 +54,7 @@ if exists('*SurroundRegister')
   call SurroundRegister('b', 'i', "@<i>{\r}")
   call SurroundRegister('b', 're', "@<recipe>{\r}")
 endif
+
+let &cpo = s:save_cpo
+unlet s:save_cpo
+let g:loaded_review = 1
