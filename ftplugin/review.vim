@@ -5,6 +5,8 @@ endif
 let s:save_cpo = &cpo
 set cpo&vim
 
+setl commentstring=#@#\ %s
+
 function! ReVIEWCaption(level)
   let level = a:level
   let orig = getline(".")
