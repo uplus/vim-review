@@ -37,14 +37,16 @@ function! ReVIEWTable() range
   call append(a:firstline, '----')
 endfunction
 
-map gh1 :call ReVIEWCaption(1)
-map gh2 :call ReVIEWCaption(2)
-map gh3 :call ReVIEWCaption(3)
-map gh4 :call ReVIEWCaption(4)
-map gl :call ReVIEWList()
-map ge :call ReVIEWEmlist()
-map gc :call ReVIEWCmd()
-map gt :call ReVIEWTable()
+if !get(g:, 'review_no_default_key_mappings', 0)
+  map <silent><buffer>gh1 :call ReVIEWCaption(1)
+  map <silent><buffer>gh2 :call ReVIEWCaption(2)
+  map <silent><buffer>gh3 :call ReVIEWCaption(3)
+  map <silent><buffer>gh4 :call ReVIEWCaption(4)
+  map <silent><buffer>gl :call ReVIEWList()
+  map <silent><buffer>ge :call ReVIEWEmlist()
+  map <silent><buffer>gc :call ReVIEWCmd()
+  map <silent><buffer>gt :call ReVIEWTable()
+endif
 
 if exists('*SurroundRegister')
   call SurroundRegister('b', 't', "@<tt>{\r}")
